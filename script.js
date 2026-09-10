@@ -2,12 +2,12 @@ const WHATSAPP_NUMERO = "5584921713033";
 //const HORA_ABRE = 18;
 //const HORA_FECHA = 22;
 
-const FUSO_LOJA = "America/Fortaleza"; // fuso de Natal/RN
+const FUSO_LOJA = "America/Fortaleza"; // fuso de Natal
 
 const HORARIO_FUNCIONAMENTO = {
   padrao: { abre: 18, fecha: 22 },
   excecoes: {
-    // 0: { abre: 18, fecha: 20 }, // exemplo: domingo fecha mais cedo
+    // 0: { abre: 18, fecha: 20 }
   },
 };
 
@@ -42,7 +42,7 @@ function updateStatusLoja(){
     : `Fechado agora · abre às ${formatHora(cfg.abre)}`;
   if(chip) chip.textContent = `🕒 ${formatHora(cfg.abre)}–${formatHora(cfg.fecha)}`;
 }
-// ---------- CARDÁPIO REAL (Copo da Felicidade + Açaí no Pote) ----------
+//  CARDÁPIO 
 const builders = {
   copo: {
     titulo: "Copo da Felicidade",
@@ -415,8 +415,8 @@ function irParaCarrinho(){
   openDrawer();
 }
 
-// ---- CORRIGIDO: usa o mesmo horário/fuso do updateStatusLoja, em vez das
-// variáveis HORA_ABRE/HORA_FECHA que estavam comentadas e quebravam a função ----
+
+
 function dentroDoHorario(){
   const agora = getAgoraNaLoja();
   const dia = agora.getDay();
